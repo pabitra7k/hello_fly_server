@@ -13,6 +13,12 @@ app.get("/", function (req, res) {
 	res.send({ name: "Test" });
 });
 
+//get request - to fetch carousel response
+app.get("/newapp/carousel", function (req, res) {
+	// Domain you wish to allow
+  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
+  res.send(carouselInfo);
+});
 
 //Authentication Post Request for Sample test
 app.post("/Authenticate", function (req, res) {
@@ -65,3 +71,26 @@ var CheckInStatus =
 	data : "CheckIn Successfully",
 
 };
+
+//carousel sample data
+var carouselInfo = [
+{
+    "icon":"../assets/images/home1.jpg",
+    "description":"Slide 1"
+  },
+  {
+    "icon":"../assets/images/home2.jpg",
+    "description":"Slide 2"
+  },
+  {
+    "icon":"../assets/images/home3.jpg",
+    "description":"Slide 3"
+  },
+  {
+    "icon":"../assets/images/home4.jpg",
+    "description":"Slide 4"
+  },
+  {
+    "icon":"../assets/images/home5.jpg",
+    "description":"Slide 5"
+  }];
